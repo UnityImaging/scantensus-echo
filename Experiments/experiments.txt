@@ -1,0 +1,189 @@
+unity-53
+
+last a: No sigmoid
+last b: Sigmoid
+LR 0.01
+a: mseclamp
+b: matt
+*c: mseclamp
+
+===========
+
+unity-54
+LR: 0.01
+last a: No sigmoid
+last b: No sigmoid
+
+a: mseclamp
+b: matt
+*c: mseclamp
+
+
+===========
+
+unity-55
+LR: 0.001
+last a: No sigmoid
+last b: No sigmoid
+
+a: mseclamp
+b: matt
+*c: mseclamp
+
+===========
+
+unity-56
+===========
+
+unity-57
+LR: 0.001
+last a: No sigmoid
+last b: No sigmoid
+
+a: mseclamp
+b: matt
+*c: matt
+
+===========
+
+unity-58-thready-gpu2
+HRNetV2M7
+HRNet_CFG_I_Sigmoid
+
+LR: 0.001
+
+DOT_WEIGHT = 10
+CURVE_WEIGHT = 10
+
+a: mseclamp
+b: matt
+*c: matt
+
+============
+
+unity-59-rcs-gpu2
+HRNetV2M7
+HRNet_CFG_I_NoSigmoid
+
+LR: 0.001
+
+DOT_WEIGHT = 10
+CURVE_WEIGHT = 10
+
+a: mseclamp
+b: matt
+*c: matt
+
+============
+
+unity-60-rcs-gpu2
+HRNetV2M7
+HRNet_CFG_I_Sigmoid
+
+LR: 0.001
+
+DOT_WEIGHT = 10
+CURVE_WEIGHT = 10
+
+a: mseclamp
+b: matt
+*c: mattsum
+
+============
+
+unity-61-rcs-gpu2
+HRNetV2M7
+HRNet_CFG_I_NoSigmoid
+
+LR: 0.001
+
+DOT_WEIGHT = 10
+CURVE_WEIGHT = 10
+
+a: mseclamp
+b: matt
+*c: mattsum
+
+============
+
+unity-62-rcs-gpu2
+HRNetV2M7
+HRNet_CFG_I_Sigmoid
+
+LR: 0.001
+
+DOT_WEIGHT = 10
+CURVE_WEIGHT = 10
+
+a: mseclamp
+b: matt
+*c: mattsum
+
+
+=============
+from Scantensus.Nets.HRNet_CFG_I_Sigmoid import get_net_cfg
+from ScantensusPT.Nets.HRNetV2M7 import get_seg_model
+
+HOST = 'thready1'
+PROJECT = 'unity'
+EXPERIMENT = 'unity-62-thready1-gpu2'
+
+New Data.
+RAdam
+================
+
+from Scantensus.Nets.HRNet_CFG_I_Sigmoid import get_net_cfg
+from ScantensusPT.Nets.HRNetV2M7 import get_seg_model
+
+HOST = 'thready1'
+PROJECT = 'unity'
+EXPERIMENT = 'unity-63-thready1-gpu2'
+
+
+SGD
+
+
+======
+unity-73
+
+abs loss.
+
+------------
+unity-92-plax
+Train: PLAX images and points.
+Test: PLAX images and points
+
+========
+unity-94-all
+Train: All images and points.
+Test: PLAX images and points
+2/1
+
+unity-95-all
+Train: All images and points.
+Test: PLAX images and points
+4/2
+
+unity-96-all
+Train: All images and points.
+Test: PLAX images and points
+5/2
+
+unity-97-all
+Train: All images and points.
+Test: PLAX images and points
+5/2 weight * 10
+
+unity-103-all
+As unity-97-all but wiht relabelled PLAX-B
+
+unity-105-all
+Without the un-relabelled plax1
+
+unity-116
+J_Sigmoid
+5/2
+RAdam
+
+unity-117
+L_Sigmois (W18)

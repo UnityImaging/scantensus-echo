@@ -1,0 +1,4 @@
+systemd-run --user --unit=pt-train-0 -p StandardOutput=journal -p StandardError=journal /home/matthew/miniconda3/envs/scantensus-echo/bin/python /home/matthew/scantensus-echo/train-unity-pytorch-ddp.py 0 0 4
+systemd-run --user --unit=pt-train-1 -p StandardOutput=journal -p StandardError=journal /home/matthew/miniconda3/envs/scantensus-echo/bin/python /home/matthew/scantensus-echo/train-unity-pytorch-ddp.py 1 1 4
+systemd-run --user --unit=pt-train-2 -p StandardOutput=journal -p StandardError=journal /home/matthew/miniconda3/envs/scantensus-echo/bin/python /home/matthew/scantensus-echo/train-unity-pytorch-ddp.py 2 2 4
+systemd-run --user --unit=pt-train-3 -p StandardOutput=journal -p StandardError=journal /home/matthew/miniconda3/envs/scantensus-echo/bin/python /home/matthew/scantensus-echo/train-unity-pytorch-ddp.py 3 3 4

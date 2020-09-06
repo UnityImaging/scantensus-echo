@@ -1,0 +1,30 @@
+#PBS -lwalltime=12:00:00
+#PBS -lselect=1:ncpus=32:mem=192gb:ngpus=8:gpu_type=RTX6000
+#PBS -N unity-50-rcs-gpu4
+
+export PT_EXPERIMENT=$PBS_JOBNAME
+
+export PT_DATA_DIR=$TMPDIR/scantensus-data/
+export PT_OUTPUT_DIR=$RDS_PROJECT/scantensus/live/matt-output/
+
+module load anaconda3/personal
+
+rsync -rthP $RDS_PROJECT/scantensus/live/scantensus-data/ $PT_DATA_DIR
+
+cd $TMPDIR || exit
+rm -rf scantensus-echo
+git clone git@github.com:mshunshin/scantensus-echo.git
+cd scantensus-echo || exit
+git pull
+git checkout $PT_EXPERIMENT
+
+
+(python train-unity-pytorch-ddp.py 0 0 8) &
+(python train-unity-pytorch-ddp.py 1 1 8) &
+(python train-unity-pytorch-ddp.py 2 2 8) &
+(python train-unity-pytorch-ddp.py 3 3 8) &
+(python train-unity-pytorch-ddp.py 4 4 8) &
+(python train-unity-pytorch-ddp.py 5 5 8) &
+(python train-unity-pytorch-ddp.py 6 6 8) &
+(python train-unity-pytorch-ddp.py 7 7 8) &
+wait

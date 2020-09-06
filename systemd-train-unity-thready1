@@ -1,0 +1,2 @@
+systemd-run --user --unit=pt-train-0 -p StandardOutput=journal -p StandardError=journal /home/matthew/anaconda3/envs/scantensus-echo/bin/python /home/matthew/scantensus-echo/train-unity-pytorch-ddp.py 0 0 2
+systemd-run --user --unit=pt-train-1 -p StandardOutput=journal -p StandardError=journal /home/matthew/anaconda3/envs/scantensus-echo/bin/python /home/matthew/scantensus-echo/train-unity-pytorch-ddp.py 1 1 2
